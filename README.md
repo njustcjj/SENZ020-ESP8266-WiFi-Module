@@ -1,4 +1,4 @@
-# SENZ020-ESP8266-WiFi-Module
+# SENZ020-ESP8266-ESP-01S-WiFi-Module
 
 ###### Translation
 
@@ -17,15 +17,14 @@
 
 ### Specification
 
-- Wi-Fi Direct (P2P),soft-AP
-- Built-in TCP/IP protocol stack
-- Built-in low-power 32-bit CPU: can work -as an application processor
-- Support WEP/WPA-PSK/WPA2-PSK encryption
-- Support UART, IIC, GPIO interface
-- Support for TTL serial port to wireless application
-- Working voltage: 3.3V
+- Working voltage: +3.3V
 - Wireless standard: IEEE802.11b/g/n
 - Frequency: 2.4 GHz
+- Working mode: STA/ soft-AP/ soft-AP + STA
+- Support WEP/WPA-PSK/WPA2-PSK encryption
+- Support UART, TTL, GPIO interface
+- Built-in Lwip protocol stack
+- Built-in low-power 32-bit CPU: can work as an application processor
 - Size：24.7 x 14.4mm
 
 
@@ -52,8 +51,46 @@
 ![](https://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/master/pic/SENZ020_connect.png "Connecting Diagram") 
 
 
-#### Sample Code
+### Sample Code
 
+#### Sample1:
+
+> To develop with serial AT commands.  
+> Download description for [`AT_Command_Doc`](http://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/trunk/doc/AT_Command_Doc.pdf)
+
+	/*
+	Built the Serial by Arduino's Pin 2 & Pin 3, debug  serial and test the TCP/IP with other software.
+	*/
+
+	#include <SoftwareSerial.h>
+
+	SoftwareSerial mySerial(3, 2); // RX TX
+
+	void setup() {
+	    Serial.begin (115200);
+	    while (!Serial) {;}
+	    Serial.println("hardware serial!");
+	    mySerial.begin(115200);
+	    mySerial.println("software serial!");
+	}
+
+	void loop() {
+
+	    if ( mySerial. available()) {
+	       Serial.write(mySerial.read());
+	  }
+
+	    if (Serial.available()) {
+	        mySerial.write(Serial.read());
+	    }
+	}
+
+---
+
+#### Sample2:
+
+> To develop with Arduino board.  
+> Download and add the library to Arduino  IDE [`uartWIFI.h`](http://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/trunk/lib/uartWIFI.zip)
 
 	#include "uartWIFI.h"
 	#define SSID "xxxxxxx"        //wifi name
@@ -136,4 +173,4 @@
 	}
 
 
-### Purchasing [*SENZ020-ESP8266-WiFi-Module*](https://www.ebay.com/).
+### Purchasing [*SENZ020-ESP8266-ESP-01S-WiFi-Module*](https://www.ebay.com/).

@@ -1,4 +1,4 @@
-# SENZ020 ESP8266 WiFi模块
+# SENZ020 ESP8266 ESP-01S WiFi模块
 
 ###### 翻译
 
@@ -11,13 +11,14 @@
 
 ### 产品介绍
 
-> SENZ020 ESP8266 WiFi模块 拥有强大的片上处理和存储能力，内置32位处理器，内置Lwip协议栈。支持AP+STA模式共存，可通过AT指令配置各种参数。
+> SENZ020 ESP8266 ESP-01S WiFi模块 拥有强大的片上处理和存储能力，内置32位处理器，内置Lwip协议栈。支持AP+STA模式共存，可通过AT指令配置各种参数。
 > 适用于各种3.3V的单片机系统，可用于扩展Arduino, 实现无线数据传输，远程控制。
-
+>
+> 应用：家用电器、工业无线控制、智能插座/灯、Mesh网络、传感器网络、可穿戴电子产品、无线位置感知设备、安全ID标签、无线定位系统信标
 
 ### 产品参数
 
-- Wi-Fi Direct (P2P)、soft-AP
+- 工作模式：STA/ soft-AP/ STA + soft-AP
 - 内置 TCP/IP 协议栈
 - 内置低功率 32 位 CPU：可以兼作应用处理器
 - 支持 WEP/WPA-PSK/WPA2–PSK加密
@@ -53,11 +54,44 @@
 
 ### 示例代码
 
+#### Sample1:
+
+> To develop with serial AT command.  
+> Download description for [`AT Command Doc`](http://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/trunk/doc/AT Command Doc.pdf)
+
 	/*
-	日期:2017/04/15
-	功能：测试wifi ESP8266
-	作者：单片机菜鸟
+	Built the Serial by Arduino's Pin 2 & Pin 3, debug  serial and test the TCP/IP with other software.
 	*/
+
+	#include <SoftwareSerial.h>
+
+	SoftwareSerial mySerial(3, 2); // RX TX
+
+	void setup() {
+	    Serial.begin (115200);
+	    while (!Serial) {;}
+	    Serial.println("hardware serial!");
+	    mySerial.begin(115200);
+	    mySerial.println("software serial!");
+	}
+
+	void loop() {
+
+	    if ( mySerial. available()) {
+	       Serial.write(mySerial.read());
+	  }
+
+	    if (Serial.available()) {
+	        mySerial.write(Serial.read());
+	    }
+	}
+
+---
+
+#### Sample2:
+
+> To develop with Arduino board.  
+> Download and add the library to Arduino  IDE [`uartWIFI.h`](http://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/trunk/lib/uartWIFI.zip)
 
 	#include "uartWIFI.h"
 	#define SSID "xxxxxxx"        //wifi热点
@@ -140,4 +174,4 @@
 	}
 
 
-### 购买[*SENZ020 ESP8266 WiFi模块*](https://www.ebay.com/).
+### 购买[*SENZ020 ESP8266 ESP-01S WiFi模块*](https://www.ebay.com/).
