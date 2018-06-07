@@ -49,7 +49,7 @@
 
 #### 连线图
 
-![](https://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/master/pic/SENZ020_connect.png "连线图") 
+![](https://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/master/pic/SENZ020_connect.PNG "连线图") 
 
 
 ### 示例代码

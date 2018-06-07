@@ -12,7 +12,7 @@
 ### Introduction
 
 
-> SENZ020 ESP8266 has a powerful on-chip processing and storage capacity, built-in 32-bit processor, built-in Lwip protocol stack.
+> SENZ020 ESP8266 ESP-01S Moudle has a powerful on-chip processing and storage capacity, built-in 32-bit processor, built-in Lwip protocol stack.
 > And SENZ020 is a Serial-to-WIFI module applicable to a variety of 3.3V single-chip system. It can be used for Arduino, wireless data transfer, remote control.  It supports AP+STA mode co-exist. And you could configure various parameters via AT commands.
 
 ### Specification
@@ -48,7 +48,7 @@
 
 #### Connecting Diagram
 
-![](https://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/master/pic/SENZ020_connect.png "Connecting Diagram") 
+![](https://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/master/pic/SENZ020_connect.PNG "Connecting Diagram") 
 
 
 ### Sample Code
