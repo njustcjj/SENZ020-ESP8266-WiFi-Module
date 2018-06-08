@@ -60,6 +60,7 @@
 > Download description for [`AT Command Doc`](http://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/trunk/doc/AT Command Doc.pdf)
 
 	/*
+	RXD <-> Pin3, TXD <-> Pin2;
 	Built the Serial by Arduino's Pin 2 & Pin 3, debug  serial and test the TCP/IP with other software.
 	*/
 
