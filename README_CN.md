@@ -57,7 +57,7 @@
 #### Sample1:
 
 > To develop with serial AT command.  
-> Download description for [`AT Command Doc`](http://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/trunk/doc/AT Command Doc.pdf)
+> Download description for [`AT Command Doc`](http://github.com/njustcjj/SENZ020-ESP8266-WiFi-Module/blob/trunk/doc/AT_Command_Doc.pdf)
 
 	/*
 	RXD <-> Pin3, TXD <-> Pin2;
